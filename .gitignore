@@ -1,0 +1,17 @@
+# === Angular Frontend ===
+/bistropulse/dist
+/bistropulse/.angular
+/bistropulse/node_modules
+...
+
+# === Django Backend ===
+__pycache__/
+*.py[cod]
+venv/
+*.sqlite3
+*.log
+.env
+backend/**/migrations/
+!backend/**/migrations/__init__.py
+backend/media/
+backend/staticfiles/

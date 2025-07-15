@@ -1,0 +1,52 @@
+.layout-wrapper {
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+
+  app-sidebar {
+    width: 265px;
+    flex-shrink: 0;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: width 0.3s ease;
+  }
+
+  &.sidebar-collapsed {
+    app-sidebar {
+      width: 80px; // collapsed width
+    }
+  }
+
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+    overflow-y: auto;
+    transition: margin-left 0.3s ease;
+
+    main {
+      flex: 1;
+      padding: 1.5rem;
+      overflow-y: auto;
+    }
+  }
+}
+
+.offline-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 2rem;
+}
+
+.offline-video {
+  max-width: 480px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}

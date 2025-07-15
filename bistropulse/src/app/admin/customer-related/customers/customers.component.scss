@@ -1,0 +1,232 @@
+@use "../../../../styles.scss" as *;
+.loading-table {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#container {
+  background: white;
+  padding: 15px;
+
+  header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+
+    h1 {
+      font-size: 16px;
+      font-weight: 600px;
+      color: #1a1d1f;
+      position: relative;
+      margin-left: 12px;
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 8px;
+        height: 20px;
+        border-radius: 2px;
+        background: $primary;
+        left: -10px;
+      }
+    }
+
+    .btn-container {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      justify-content: center;
+
+      .btn {
+        background: #e9e9e9;
+        font-size: 15px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .body {
+    .table-parent {
+      .table {
+        .tbody {
+          tr {
+            &.checked {
+              background: $gray;
+            }
+            td {
+              background: transparent !important;
+              img {
+                object-fit: cover;
+              }
+            }
+            td span {
+              display: flex;
+              align-items: center;
+              margin-top: 8px;
+            }
+            td input {
+              display: flex;
+              align-items: center;
+              margin-top: 16px;
+            }
+          }
+        }
+        .actions {
+          display: flex;
+          justify-content: start;
+          gap: 7px !important;
+          height: 100%;
+          margin-top: 10px;
+          margin-right: 20px;
+          .icon {
+            ::ng-deep svg {
+              padding: 3px;
+              border-radius: 5px;
+              transition: 0.3s all linear;
+
+              &:hover {
+                background-color: #ccc;
+                transition: 0.3s all linear;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+  height: 20px;
+  width: 20px;
+}
+
+// Toggle switch
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #888;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+#toolbar-container {
+  .toolbar {
+    background: white;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 25px;
+    right: -60px;
+    padding: 8px;
+    border-radius: 8px;
+    list-style: none;
+    z-index: 100;
+    transition: 0.2s ease-in-out;
+
+    &.visible {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &.hidden {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    li {
+      width: 100%;
+      margin-block-end: 10px;
+      background: white;
+      color: #6f767e;
+      font-size: 14px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      border-radius: 8px;
+      transition: 0.2s ease-in-out;
+      height: 36px;
+      gap: 15px;
+      padding: 11px;
+
+      &:hover {
+        background: #efefef;
+      }
+    }
+  }
+}
+
+label {
+  display: flex;
+  color: $secondary;
+  font-size: 15px;
+  gap: 10px;
+  overflow: hidden;
+  align-items: center;
+  background: transparent;
+  border: 1px solid $gray;
+  padding: 8px;
+  max-width: 600px;
+
+  span {
+    display: flex;
+    text-align: center;
+
+    i {
+      width: 100%;
+    }
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+  }
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+}

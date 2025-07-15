@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row">
+    <div id="con" class="con col-md-5 m-auto d-flex rounded-2">
+      <div class="img-con mx-auto">
+        <img src="assets/images/logo-full.png" alt="logo" />
+      </div>
+
+      <h2 class="my-3">Sign in with username and password</h2>
+
+      <!-- ✅ Connect form to FormGroup -->
+      <form
+        class="form-wrapper"
+        [formGroup]="loginForm"
+        (ngSubmit)="onSubmit()"
+      >
+        <!-- Username field -->
+        <div class="input-wrapper form-control position-relative">
+          <p class="label position-absolute">
+            Username <span class="required">*</span>
+          </p>
+          <span><i class="fa-solid fa-envelope"></i></span>
+          <input type="text" formControlName="username" />
+        </div>
+
+        <!-- Password field with toggle -->
+        <div class="input-wrapper form-control position-relative">
+          <p class="label position-absolute">
+            Password <span class="required">*</span>
+          </p>
+          <span><i class="fa-solid fa-lock"></i></span>
+          <input
+            [type]="passwordVisible() ? 'text' : 'password'"
+            formControlName="password"
+          />
+          <button
+            id="visibility-toggler"
+            type="button"
+            class="toggle-password"
+            (click)="togglePasswordVisibility()"
+          >
+            <i
+              class="fa-solid"
+              [ngClass]="passwordVisible() ? 'fa-eye' : 'fa-eye-slash'"
+            ></i>
+          </button>
+        </div>
+
+        <p class="awareness-text text-center">
+          The
+          <span class="required" style="color: red; font-weight: bold">*</span>
+          Indicates Required Fields
+        </p>
+
+        <p>Not created an account? <a routerLink="/auth/signup">Signup</a></p>
+
+        <!-- ✅ Submit button triggers form submit -->
+        <div class="submit">
+          <button
+            [disabled]="isLoading()"
+            type="submit"
+            class="btn btn-primary w-100"
+          >
+            Sign in
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<app-loading-spinner *ngIf="isLoading()" />

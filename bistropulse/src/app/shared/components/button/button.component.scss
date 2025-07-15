@@ -1,0 +1,45 @@
+@use "../../../../styles.scss" as *;
+
+button {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer !important;
+  transition: all 0.2s ease;
+  display: flex !important;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+
+  &.sm {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+  }
+
+  &.md {
+    font-size: 0.9375rem;
+    padding: 0.5rem 1rem;
+  }
+
+  &.lg {
+    font-size: 2.9375rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  &.primary {
+    background: $primary;
+    color: white;
+  }
+
+  &.secondary {
+    background: white;
+    color: black;
+    border: 1px solid #11131580;
+  }
+
+  &.danger {
+    background: red;
+    color: white;
+  }
+}

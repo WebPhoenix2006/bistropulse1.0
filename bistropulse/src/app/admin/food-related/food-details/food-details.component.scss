@@ -1,0 +1,131 @@
+@use "../../../../styles.scss" as *;
+@use "sass:color";
+
+#container {
+  background: white !important;
+  padding: 24px;
+  border-radius: 8px;
+
+  #header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .btn-container {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+  }
+
+  #divider {
+    margin: 24px 0;
+    max-width: 1100px;
+
+    #left-section {
+      img {
+        width: 400px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 1px solid $gray;
+      }
+
+      #h5 {
+        font-weight: 700;
+      }
+    }
+
+    #right-section {
+      .rating-range-container {
+        img {
+          width: 120px;
+          height: 20px;
+          object-fit: cover;
+        }
+        .row {
+          #average-rating-container {
+            #ratings {
+              gap: 16px;
+              align-items: flex-start !important;
+              justify-content: center !important;
+              margin-top: 2rem !important;
+
+              h2 {
+                font-weight: 700;
+                font-size: 24px;
+
+                span {
+                  font-weight: 400;
+                }
+              }
+
+              .total-ratings {
+                font-size: 14px;
+                font-weight: 700;
+              }
+            }
+          }
+        }
+      }
+
+      #ratings-and-reviews {
+        margin-top: 5rem;
+      }
+      .review-card {
+        border: 1px solid $gray;
+        border-radius: 8px;
+        padding: 0.5rem;
+      }
+    }
+
+    .food-name {
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    p {
+      .food-price {
+        font-weight: 600;
+        font-size: 16px;
+      }
+    }
+
+    .food-details {
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    #p {
+      font-size: 14px;
+      padding-bottom: 20px;
+      border-bottom: 3px dashed color.adjust($color: $gray, $lightness: -10%);
+    }
+  }
+}
+
+.rating-breakdown {
+  div {
+    margin-bottom: 8px;
+    span {
+      font-size: 0.875rem;
+    }
+    .progress {
+      background-color: #eee;
+
+      .progress-bar {
+        background: #27ae60 !important;
+        z-index: 2;
+        height: 100%;
+      }
+    }
+  }
+}
+
+#price-container {
+  width: 100%;
+}
+
+#form-check {
+  margin-bottom: 18px;
+}
